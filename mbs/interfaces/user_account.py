@@ -10,7 +10,8 @@ class UserAccount(Account):
         self.__total_balance = 0
         self.__withdraw_account_number = 0
         self.account_balance = 0
-        self.daily_limit = 0
+        #self.daily_limit = 0
+        self.daily_total_transaction = 0
         super().__init__()
         
     
@@ -22,7 +23,7 @@ class UserAccount(Account):
             print(f"+ {account["account-title"]}: {account["balance"]}")
         print(f"= Total Balance: {self.__total_balance}")
     
-    #
+    #withdraw
     def CashOut(self):
         print("Withdraw")
         for i,account in enumerate(self.accounts):
@@ -32,6 +33,9 @@ class UserAccount(Account):
         self.account_balance = self.accounts[self.__withdraw_account_number]["balance"]
         amount = int(input("Enter Withdrawal Amount: "))
         self.daily_limit = self.user["accounts"][self.__withdraw_account_number]["daily-transaction-limit"]
+
+        #self.daily_total_transaction += amount
+
         #withdraws and updates balance
         updated_balance = super().set_balance('w', self.account_balance, amount, self.daily_limit)
 
@@ -57,10 +61,13 @@ class UserAccount(Account):
         self.daily_limit = self.user["accounts"][self.__withdraw_account_number]["daily-transaction-limit"]
         amount = int(input("Enter Send Amount: "))
         rcvr = str(input("Enter A Reciever: "))
-
+        
+        #self.daily_total_transaction += amount
+        
         #return updated balance
         updated_balance = super().set_balance('s', self.account_balance, amount, self.daily_limit, rcvr)
-        print(f"New Balance: {self.account_balance}")
+        print(f"New Balance: {updated_balance}")
+        
 
         transaction_record = {
             "transaction-type": "transfer",
@@ -81,7 +88,8 @@ class UserAccount(Account):
             "transaction-type": "deposit",
             "amount": amount
         }
-        print(self.__withdraw_account_number)
+        print(f"New Balance: {updated_balance}")
+        
         return [self.__withdraw_account_number, updated_balance, transaction_record]
         
     def TransactionHistory(self, transactions):
