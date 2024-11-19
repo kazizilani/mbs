@@ -8,7 +8,7 @@ class IO:
         #restricting access to avoid edit from anywhere else
         self.__validInput = False
 
-    def __validator(self, response):
+    def _validator(self, response):
         try:
             if int(response) in range(self.start, self.stop+1):
                 self.__validInput = True
@@ -27,7 +27,7 @@ class IO:
             else:
                 raw_input = str(input("Select An Option: "))
         
-            self.response = self.__validator(raw_input)
+            self.response = self._validator(raw_input)
         return self.response
 
 
