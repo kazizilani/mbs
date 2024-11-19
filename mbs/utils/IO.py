@@ -23,7 +23,7 @@ class IO:
     def ask_input(self):
         while not self.__validInput:
             if self.msg:
-                raw_input = str(f"{input(*self.msg)} :")
+                raw_input = str(input(f"{self.msg[0]}: "))
             else:
                 raw_input = str(input("Select An Option: "))
         

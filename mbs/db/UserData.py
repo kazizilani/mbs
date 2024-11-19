@@ -5,7 +5,7 @@ User = {
     "accounts":[
             {
                 "account-title": "Emergency Savings",
-                "acccount-type": "savings",
+                "account-type": "savings",
                 "account-number": 56,
                 "account-pin": 1010,
                 "balance": 500,
@@ -32,7 +32,7 @@ User = {
             },
              {
                 "account-title": "Daily Spendings",
-                "acccount-type": "savings",
+                "account-type": "savings",
                 "account-number": 56,
                 "account-pin": 1011,
                 "balance": 200,

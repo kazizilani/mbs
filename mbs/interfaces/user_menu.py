@@ -1,6 +1,9 @@
 #imports the menu input validator
 from utils.IO import IO
 
+from interfaces.user_account import UserAccount
+
+
 class UserMenu:
     def __init__(self, user):
         self.user = user
@@ -15,27 +18,27 @@ class UserMenu:
         print("6. Logout")
 
         # returns a valid response and handle input errors
-        self.__response = int(str(IO(1,5).ask_input()))
+        self.response = int(str(IO(1,5).ask_input()))
 
         #check balance
         if self.response == 1:
-            pass
+            UserAccount(self.user).CheckBalance()
 
         #withdraw money
         elif self.response == 2:
-            pass
+            UserAccount(self.user).CashOut()
         
         #send money
         elif self.response == 3:
-            pass
+            UserAccount(self.user).SendMoney()
 
         #desposit money
         elif self.response == 4:
-            pass
+            UserAccount(self.user).Deposit()
         
         #check latest transactions
         elif self.response ==5:
-            pass
+            UserAccount(self.user).TransactionHistory()
         
         #logout
         else:
