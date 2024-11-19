@@ -2,6 +2,7 @@ class TransferLogic:
     #deposits money
     def _deposit(self, balance, amount):
         updated_balance = balance + amount
+
         return updated_balance
     
     #withdraws money

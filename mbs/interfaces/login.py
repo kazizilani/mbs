@@ -37,12 +37,18 @@ class Login:
 
                     #welcomes user by name
                     print(f"👋 Welcome, {user["name"]}!")
-                    #instantiate user menu class
-                    #invoke user menu controller method
-                    UserMenu(user).UserMenuController()
-                    #return the login controller method
-                    return
                 
                 else:
                         print("⭕ Wrong Password")
+
+        #display the user menu till logged out    
+        while self.__login_status:
+            #instantiate user menu class
+            #invoke user menu controller method
+            print(self.__login_status)
+            is_logged_out = UserMenu(user).UserMenuController()
+            print(self.__login_status)
+            #breaks the loop when user logs out
+            self.__login_status = is_logged_out
+            
                     

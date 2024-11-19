@@ -1,5 +1,5 @@
 User = {
-    "username": "john",
+    "username": "user",
     "password": "pass",
     "name": "John Doe",
     "accounts":[
