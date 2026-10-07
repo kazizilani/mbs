@@ -1,4 +1,1 @@
-# mbs
-oop project: mobile banking system (prototype)
-
-#Mobile Banking System (prototype)
+A CLI-based mock mobile banking system designed to demonstrate core OOP principles.
