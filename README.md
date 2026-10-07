@@ -1,4 +1,5 @@
 **MBS — Mock Banking System**
+
 MBS (Mock Banking System) is a Python-based command-line banking application created to demonstrate Object-Oriented Programming (OOP) and basic software architecture principles.
 
 The project simulates common banking functionality while organizing the application into separate modules for user interaction, database operations, and utility functions. The system uses classes and objects to encapsulate data and behavior, while separating responsibilities between different components.
